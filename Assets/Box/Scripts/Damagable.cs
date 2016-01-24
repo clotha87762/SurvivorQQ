@@ -14,6 +14,9 @@ public class Damagable : MonoBehaviour {
     Quaternion damageQ;
     float count;
     [SerializeField] private ParticleSystem deathEffect;
+
+    [SerializeField]Item mItem;
+
     void Start () {
         onDamage = false;
         count = 0;
@@ -53,18 +56,18 @@ public class Damagable : MonoBehaviour {
     public void HitEvent()
     {   
         //GameObject checkSphere = GameObject.Find("Body/rightHand");
-        Collider[] hitObj = Physics.OverlapSphere(checkSphere.transform.position,0.3f);
+        Collider[] hitObj = Physics.OverlapSphere(checkSphere.transform.position,0.5f);
         
         foreach (Collider c in hitObj)
         {
-            if((c.tag=="Player"&&c.gameObject!=gameObject)||c.tag=="Monster"){
+            if((c.tag=="Player"||c.tag=="Monster")&&c.gameObject!=gameObject){
                c.gameObject.GetComponent<Damagable>().Damage( gameObject.transform.forward,ATK);
             }
         }
 
     }
 
-    void Damage(Vector3 v,float atk)
+    public void Damage(Vector3 v,float atk)
     {
         gameObject.GetComponent<Rigidbody>().velocity += v * 4.0f + new Vector3(0,3.0f,0);
         HP -= atk;
@@ -76,5 +79,18 @@ public class Damagable : MonoBehaviour {
       // endDir = new Vector3(0,-1,0) ;//damageDir*40 ;
       //  startDir = transform.forward;
        // gameObject.GetComponent<Animator>().Play("Damaged");
+    }
+
+
+    public void SetItem(Item item)
+    {
+        mItem = item;
+        Debug.Log("ITEM GET");
+    }
+
+    public void UseItem()
+    {
+        if(mItem!=null)
+        mItem.Use();
     }
 }

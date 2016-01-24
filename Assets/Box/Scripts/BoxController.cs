@@ -45,9 +45,11 @@ public class BoxController : MonoBehaviour {
     bool rollable = true;
 
     public bool acting = false;
+    
+    public bool isPlayer ;
 
-    //private float ATK = 3.0f;
-    //private float HP = 10.0f;
+    //private float STR = 3.0f;
+    //private float VIT = 10.0f;
     //private float AGI = 5.0f;
 
     void Awake()
@@ -96,7 +98,7 @@ public class BoxController : MonoBehaviour {
         else rollSpeed = 0.0f;
         //transform.LookAt(transform.position + mMove);
         //rotate character to move direction if not in attack mode
-        if (mMove.magnitude > 0.0f && !mAttack)
+        if (mMove.magnitude > 0.01f && !mAttack)
         {
 			Vector3 lookRotationVector = transform.position + mMove - transform.position;
 			if(lookRotationVector.magnitude > 0.1f)
@@ -116,7 +118,9 @@ public class BoxController : MonoBehaviour {
         float extraSpeed = (mRunning) ? 1.0f + runExtraSpeedScale : 1.0f; 
         mRigidbody.velocity = mMove * speed * extraSpeed + new Vector3(0, originalVelocity.y, 0);
         if (!mGrounded) mRigidbody.velocity += jumpVelocity * (1.0f-notGroundedScale);
+
         mRigidbody.velocity += transform.forward * rollSpeed;
+
     }
 
     public void Jump()
@@ -232,5 +236,13 @@ public class BoxController : MonoBehaviour {
        Debug.Log("ENDROLL");
         rollable = true;
         acting = false;
+    }
+
+    public void UseItem()
+    {
+       // acting = true;
+        if (acting) return;
+
+        damagable.UseItem();
     }
 }

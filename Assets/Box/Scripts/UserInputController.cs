@@ -13,7 +13,7 @@ public class UserInputController : MonoBehaviour
 	public string KeyAttack		 = "Attack1";
 	public string KeyRoll		 = "Roll1";
 	public string KeySprint		 = "Sprint1";
-	
+    public string KeyItem = "Item1";
 	
     private BoxController mBox;
     public Transform mCamera;
@@ -69,6 +69,7 @@ public class UserInputController : MonoBehaviour
         //jump if character is grounded and Jump key is pressed
         if (Input.GetButton(KeyJump)) mBox.Jump(); 
         if (Input.GetButtonDown(KeyRoll)) mBox.Roll();
+        if (Input.GetButtonDown(KeyItem)) mBox.UseItem();
 
 
         ///////////////////////////////////

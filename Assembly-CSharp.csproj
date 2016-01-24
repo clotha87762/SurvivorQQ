@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5CDA58B5-03F1-403A-F3EA-329593A50857}</ProjectGuid>
+    <ProjectGuid>{06CDC794-5863-7256-D3DE-AF20EC73701F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -38,13 +38,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BagIdea\GUIScript.cs" />
      <Compile Include="Assets\Box\Scripts\BoxController.cs" />
      <Compile Include="Assets\Box\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Box\Scripts\Damagable.cs" />
@@ -52,28 +53,34 @@
      <Compile Include="Assets\Box\Scripts\UserInputController.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\Item\Fire.cs" />
+     <Compile Include="Assets\Item\FireBall.cs" />
+     <Compile Include="Assets\Item\Item.cs" />
+     <Compile Include="Assets\Item\Stone.cs" />
+     <Compile Include="Assets\Item\StoneBall.cs" />
+     <Compile Include="Assets\Monster\1\Monster1.cs" />
      <Compile Include="Assets\Scripts\SceneScript\MovingPlatformTrigger.cs" />
      <Compile Include="Assets\Scripts\SceneScript\PlatformCollider.cs" />
      <Compile Include="Assets\Scripts\SceneScript\StationaryMovingPlatform.cs" />
      <Compile Include="Assets\Scripts\TemplateScript\CharacterSetupManager.cs" />
      <Compile Include="Assets\Scripts\UserInputManager.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>D:/kamisama366095/UNITY Project/2016 SVQ/SurvivorQ/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>D:/SurvivorQQ/SurvivorQQ/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>D:/kamisama366095/UNITY Project/2016 SVQ/SurvivorQ/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ <HintPath>D:/SurvivorQQ/SurvivorQQ/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>D:/kamisama366095/UNITY Project/2016 SVQ/SurvivorQ/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ <HintPath>D:/SurvivorQQ/SurvivorQQ/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>D:/kamisama366095/UNITY Project/2016 SVQ/SurvivorQ/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ <HintPath>D:/SurvivorQQ/SurvivorQQ/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
